@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity  {
     static EditText mEmail,mName,mPassword,mPno,mLogmail,mLogPassword,mConPass,mAnswer;
     static Button mLogin,mSignUp;
     static Spinner secQuestions;
-    static ImageView profileImg,profileImgTest,loginImage;
+    static ImageView profileImg;
     static TextView profileText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -409,10 +409,7 @@ public class MainActivity extends AppCompatActivity  {
 
                                         Toast.makeText(getActivity(),"Added Successfully!", Toast.LENGTH_SHORT).show();
                                         helper.insertContact(c);
-                                        Contact co=helper.searchPass(newEmail,newPass);
 
-                                        byte[] userByteImage=co.getImage();
-                                        profileImgTest.setImageBitmap(BitmapFactory.decodeByteArray(userByteImage, 0, userByteImage.length));
                                     }else{
                                         Toast.makeText(getActivity(),"User Already Exists!", Toast.LENGTH_SHORT).show();
                                     }
@@ -430,10 +427,7 @@ public class MainActivity extends AppCompatActivity  {
                                     c.setImage(stream.toByteArray());
                                     Toast.makeText(getActivity(),"Added Successfully!", Toast.LENGTH_SHORT).show();
                                     helper.insertContact(c);
-                                    Contact co=helper.searchPass(newEmail,newPass);
 
-                                    byte[] userByteImage=co.getImage();
-                                    profileImgTest.setImageBitmap(BitmapFactory.decodeByteArray(userByteImage, 0, userByteImage.length));
                                 }
 
                             }
